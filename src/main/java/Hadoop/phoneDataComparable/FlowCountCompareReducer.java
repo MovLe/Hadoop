@@ -1,4 +1,4 @@
-package phoneDataComparable;
+package Hadoop.phoneDataComparable;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;

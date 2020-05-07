@@ -1,4 +1,4 @@
-package ETLLOG;
+package Hadoop.ETLLOG;
 
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.NullWritable;

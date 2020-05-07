@@ -1,4 +1,4 @@
-package MapJoin;
+package Hadoop.MapJoin;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.io.LongWritable;

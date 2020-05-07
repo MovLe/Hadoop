@@ -1,4 +1,4 @@
-package WordCount;
+package Hadoop.WordCount;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;

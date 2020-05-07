@@ -1,4 +1,4 @@
-package phoneDataComparable;
+package Hadoop.phoneDataComparable;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

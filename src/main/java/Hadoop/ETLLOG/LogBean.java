@@ -1,4 +1,4 @@
-package ETLLOG;
+package Hadoop.ETLLOG;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

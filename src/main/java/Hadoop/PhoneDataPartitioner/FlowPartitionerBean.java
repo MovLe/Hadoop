@@ -1,4 +1,4 @@
-package PhoneDataPartitioner;
+package Hadoop.PhoneDataPartitioner;
 
 import lombok.Getter;
 import lombok.Setter;

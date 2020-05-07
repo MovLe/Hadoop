@@ -1,4 +1,4 @@
-package phoneData;
+package Hadoop.phoneData;
 
 import lombok.Getter;
 import lombok.Setter;

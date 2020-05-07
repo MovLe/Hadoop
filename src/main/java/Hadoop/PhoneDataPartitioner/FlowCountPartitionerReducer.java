@@ -1,8 +1,7 @@
-package PhoneDataPartitioner;
+package Hadoop.PhoneDataPartitioner;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
-import phoneData.FlowBean;
 
 import java.io.IOException;
 
