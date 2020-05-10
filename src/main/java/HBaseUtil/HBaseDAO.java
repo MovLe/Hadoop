@@ -4,7 +4,7 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
 /**
  * @ClassName HBaseDAO
- * @MethodDesc: TODO HBaseDAO功能介绍
+ * @MethodDesc:
  * @Author Movle
  * @Date 5/10/20 8:06 下午
  * @Version 1.0
@@ -23,7 +23,7 @@ public class HBaseDAO {
     public static void main(String[] args) throws Exception {
         Configuration conf = HBaseConfiguration.create();
         conf.set("hbase.zookeeper.property.clientPort", "2181");
-        conf.set("hbase.zookeeper.quorum", "bigdata111");
+        conf.set("hbase.zookeeper.quorum", "hadoop2");
         conf.set("zookeeper.znode.parent", "/hbase");
 
 

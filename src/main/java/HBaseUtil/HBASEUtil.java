@@ -66,22 +66,22 @@ public class HBASEUtil {
     public static void createTable(Configuration conf, String tableName, int regions, String... columnFamily) throws IOException {
         Connection connection = ConnectionFactory.createConnection(conf);
         Admin admin = connection.getAdmin();
-//判断表
+        //判断表
         if (isExistTable(conf, tableName)) {
             return;
         }
-//表描述器 HTableDescriptor
+        //表描述器 HTableDescriptor
 
         HTableDescriptor htd = new HTableDescriptor(TableName.valueOf(tableName));
         for (String cf : columnFamily) {
-//列描述器 ：HColumnDescriptor
+        //列描述器 ：HColumnDescriptor
             htd.addFamily(new HColumnDescriptor(cf));
         }
-//htd.addCoprocessor("hbase.CalleeWriteObserver");
-//创建表
+        //htd.addCoprocessor("hbase.CalleeWriteObserver");
+        //创建表
         admin.createTable(htd,genSplitKeys(regions));
         System.out.println("已建表");
-//关闭对象
+        //关闭对象
         close(admin,connection);
     }
 
@@ -91,9 +91,9 @@ public class HBASEUtil {
      * @return splitKeys
      */
     private static byte[][] genSplitKeys(int regions) {
-//存放分区键的数组
+        //存放分区键的数组
         String[] keys = new String[regions];
-//格式化分区键的形式  00 01 02
+        //格式化分区键的形式  00 01 02
         DecimalFormat df = new DecimalFormat("000");
         for (int i = 0; i < regions; i++) {
             keys[i] = df.format(i*10) + "";
@@ -101,21 +101,19 @@ public class HBASEUtil {
 
 
         byte[][] splitKeys = new byte[regions][];
-//排序 保证你这个分区键是有序得
+        //排序 保证你这个分区键是有序得
         TreeSet<byte[]> treeSet = new TreeSet<byte[]>(Bytes.BYTES_COMPARATOR);
         for (int i = 0; i < regions; i++) {
             treeSet.add(Bytes.toBytes(keys[i]));
         }
 
-
-//输出
+        //输出
         Iterator<byte[]> iterator = treeSet.iterator();
         int index = 0;
         while (iterator.hasNext()) {
             byte[] next = iterator.next();
             splitKeys[index++]= next;
         }
-
 
         return splitKeys;
     }
